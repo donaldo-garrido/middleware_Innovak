@@ -1,0 +1,27 @@
+Podemos sacar los USERS_ID de:
+Saba Profile APIs/Get All Persons(Internal/External)
+
+
+
+La unión con los USERNAMES se hace a través de:
+Saba Profile APIs/Find profile information
+- searchFields	: username
+-query : id%3D%3D<ID>
+
+El anterior era más complejo, se usó:
+Saba Profile APIs/Get the required profile details of a particular person
+
+
+
+Obtenemos las suscripciones de una persona en:
+Saba Profile APIs/Get Certifications/Enrollments/Transcripts for a person
+
+
+
+
+Finalmente, traemos los detalles del enroll y la clase con:
+Saba Learning APIs/Get the details of an enrollment
+-sections : regdetail,classdetail
+
+
+
