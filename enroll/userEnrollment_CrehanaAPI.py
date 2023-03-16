@@ -13,7 +13,6 @@ def userEnrollment_CREHANA(user_id, course_id):
 
     response = requests.post(url, data=payload, headers=headers)
     
-    print('response status = '+str(response.status_code))
-    print(response.content)
+    statusStatemnt = 'response status = '+str(response.status_code)
+    return(response.content, statusStatemnt)
     
-userEnrollment_CREHANA('224861', '9307')

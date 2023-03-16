@@ -13,17 +13,17 @@ def enrollmentsPerson_SABA():
 
     for iD in backID:
 
-        url = 'https://techsharetest-api.sabacloud.com/v1/people/'+iD+'/enrollments/search'
+        url = 'https://innovaksb-api.sabacloud.com/v1/people/'+iD+'/enrollments/search'
 
         startPage = 1
-        count = 3
+        count = 5
         
         payload = {
         "count": count,
         "startPage": startPage,
         }
         
-        headers = {'Content-Type':'application/json','SabaCertificate':'VE5CVE5UMTA4XiNeREpBOEtzYTNzU2c0M1NtRU5COEl1a3FsYUdlOFNidzdjUHI2QkRLaUN6S0lSczhBWWM4cHg1TlJ1dkRjU0REeEV2dl81bWhka3k4MzVSTS1mVU5IRkkzVHRndmxoU21jdlE3ekRuU2c1QjRxbXdzMGE0WC1KMDlNT2xZMUE2dVZ0alhIX3Exam9qTUY2Qi1fcnJLaGZB'}
+        headers = {'Content-Type':'application/json','SabaCertificate':'TkExVE5CMDE3NF4jXmdiSGd3cUtaVVdLRFZwa3hEQ21UQmZUY3dON1ViUXRZUmQ1eDd2eVp5c3BIWWJZLVQ1SmU0Zk9ES0ZpMmJXUG9jSTRWYVY2Q0RjZ0RodDRzWjVYTUhSNVZzREJxVHBCOG84ZVk2d3FDdk1jWVdzNHNqQktVVmppNTQyR1QyVE9tVVlRdDRnTmk4TDk5ckw1dVR0VVVocWVtd3NVVnBJWkJ4MFVYSWdfSUtrbw'}
     
         response = requests.get(url, params=payload, headers=headers)
         #print(response)
@@ -42,13 +42,14 @@ def enrollmentsPerson_SABA():
             enrolls.append(result['id'])
 
         totalCalls = int(totalResults/count)
-        print(totalCalls)
+        #print(totalCalls)
 
         if totalCalls > 0:
             for call in range(totalCalls):
+                startPage+=1
                 payload = {
                 "count": count,
-                "startPage": startPage+1,
+                "startPage": startPage,
                 }
                 response = requests.get(url, params=payload, headers=headers)
                 
@@ -66,9 +67,12 @@ def enrollmentsPerson_SABA():
 
         
 
-
+    print('#########################################')
     print(enrollsPerson)
+    print('#########################################')
 
     return(enrollsPerson)
 
-enrollmentsPerson_SABA()
+
+
+#enrollmentsPerson_SABA()

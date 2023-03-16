@@ -1,5 +1,5 @@
-from .reportResult_SabaAPI import reportResult_SABA
-from .organizationReport_CrehanaAPI import organizationReport_CREHANA
+from reportResult_SabaAPI import reportResult_SABA
+from organizationReport_CrehanaAPI import organizationReport_CREHANA
 
 
 # Request to Crehana API
@@ -8,6 +8,7 @@ request_Crehana = organizationReport_CREHANA()
 
 # Type of the request response
 print(type(request_Crehana))
+
 
 completion_statement = '\nCourse {} was completed by {}'
 
@@ -32,7 +33,7 @@ for request in request_Crehana:
     if userID == 224861 and progress == 100:
         
         # Set variables to call SABA API
-        username = 'USER-TCSAPI-9'
+        username = 'USER-TCSAPI-2'
         externalContentID = courseID+'-CREHANA'
 
         
