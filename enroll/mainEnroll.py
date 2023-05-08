@@ -33,6 +33,3 @@ for usr in enrollments:
             print(content)
             print('--------------------------------------')
             counter+=1
-
-
-
