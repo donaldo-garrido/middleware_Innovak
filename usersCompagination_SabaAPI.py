@@ -1,9 +1,21 @@
+# *******************************************************************
+# Written by Donaldo Garrido
+# This code
+# *******************************************************************
+
 def usersCompagination_SABA():
 
     import requests
     import json
+    from info import info_Required
 
-    url = 'https://techsharetest-api.sabacloud.com/v1/people/'
+
+    # May be 'techsharetest', 'innovaksb'
+    slug = 'techsharetest'
+
+    certificate_Saba, api_Key, secret_Access = info_Required(slug)
+
+    url = 'https://'+slug+'-api.sabacloud.com/v1/people/'
 
     startPage = 1
     count = 50
@@ -14,7 +26,7 @@ def usersCompagination_SABA():
     "startPage": startPage,
     }
     
-    headers = {'Content-Type':'application/json','SabaCertificate':'VE5CVE5UMTA4XiNeREpBOEtzYTNzU2c0M1NtRU5COEl1a3FsYUdlOFNidzdjUHI2QkRLaUN6S0lSczhBWWM4cHg1TlJ1dkRjU0REeEV2dl81bWhka3k4MzVSTS1mVU5IRkkzVHRndmxoU21jdlE3ekRuU2c1QjRxbXdzMGE0WC1KMDlNT2xZMUE2dVZ0alhIX3Exam9qTUY2Qi1fcnJLaGZB'}
+    headers = {'Content-Type':'application/json','SabaCertificate':certificate_Saba}
  
     response = requests.get(url, params=payload, headers=headers)
     #print(response)

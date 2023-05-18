@@ -1,7 +1,5 @@
-# *******************************************************************
 # Written by Donaldo Garrido
 # This code has the certificates and api keys for Crehana and Saba API
-# *******************************************************************
 
 def info_Required(environment='techsharetest'):
     # Certificates from the environments used
